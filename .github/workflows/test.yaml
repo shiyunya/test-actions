@@ -17,9 +17,9 @@ jobs:
         id: echo_env
         run: |
           if [ "${{ github.ref_name }}" = "main" ]; then
-            echo "::set-output name=env_name::production"
+            echo "env_name=production" >> $GITHUB_STATE
           elif [ "${{ github.ref_name }}" = "develop" ]; then
-            echo "::set-output name=env_name::develop"
+            echo "env_name=environment" >> $GITHUB_STATE
           fi
   echo_var:
     needs: ["echo_env"]
