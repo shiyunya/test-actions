@@ -1,9 +1,10 @@
 name: test
 
 on:
-  branch:
-    - main
-    - develop
+  push:
+    branches:
+      - main
+      - develop
 
 jobs:
   echo_env:
